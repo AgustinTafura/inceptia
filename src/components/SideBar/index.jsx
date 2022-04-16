@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './index.scss'
 
-const SideBar = () => {
+const SideBar = ({setBotActive}) => {
 
-    const [botActive, setBotActive] = useState()
+    
 
   return (
     <nav id="sidebarMenu" className="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-            {botActive}
             <div className="position-sticky pt-3 text-center">
+                <h5>CLIENTE/BOT</h5>
                 <div className="btn-group-vertical" role="group" aria-label="Basic radio toggle button group"  onChange={(e)=>setBotActive(e.target.id)}>
                     <input type="radio" className="btn-check" name="btnradio" id="btnradio1" autoComplete="off" />
                     <label className="btn btn-outline-primary" htmlFor="btnradio1">Radio 1</label>

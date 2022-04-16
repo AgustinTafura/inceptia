@@ -1,0 +1,14 @@
+.react-datepicker-wrapper .react-datepicker__input-container input { 
+    width: 7rem 
+
+}
+.start-date {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.end-date {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: -1px;
+}
