@@ -2,20 +2,23 @@ import "react-datepicker/dist/react-datepicker.css";
 import 'bootstrap/dist/js/bootstrap.js'
 import 'bootstrap/dist/css/bootstrap.css';
 
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import SideBar from './components/SideBar';
 import DateFilter from "./components/DateFilter";
+import { BotsProvider } from "./contexts/BotsContext";
 
 
 function App() {
-
 
   const [botActive, setBotActive] = useState()
   const [startDate, setStartDate] = useState();
   const [endDate, setEndDate] = useState();
 
-
   return (
+    
+    <BotsProvider>
+      
+    
       <div className="App container-fluid">
         <div className="row">
           <SideBar setBotActive={setBotActive}/>
@@ -170,6 +173,7 @@ function App() {
           </main>
         </div>
       </div>
+    </BotsProvider>
   );
 }
 
