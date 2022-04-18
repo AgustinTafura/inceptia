@@ -62,7 +62,6 @@ export const ClientsProvider = ({children}) => {
 
     async function getClientCases(clientId, startDate, endDate, page = 1){
         try {
-            console.log(startDate, endDate)
             const local_updated__date__gte = startDate ? new Date(startDate).toISOString().split('T')[0]: '2000-01-01'
             const local_updated__date__lte = endDate? new Date(endDate).toISOString().split('T')[0] : new Date().toISOString().split('T')[0]
 

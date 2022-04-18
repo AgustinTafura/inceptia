@@ -11,7 +11,6 @@ const CasesTable = () => {
     const [currentPage, setCurrentPage] = useState(1);
 
     useEffect(() => {
-        console.log(333, startDate, endDate)    
         if (startDate && endDate){
             fetchCasesData(clientSelected, startDate, endDate, 1)
             setCurrentPage(1)

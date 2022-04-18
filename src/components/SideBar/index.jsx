@@ -11,7 +11,7 @@ const SideBar = () => {
     <nav id="sidebarMenu" className="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
       <div className="position-sticky pt-3 text-center">
         <h5>CLIENTE/BOT</h5>
-        <div className="btn-group-vertical" role="group" onChange={(e)=>console.log(e.target)}>
+        <div className="btn-group-vertical" role="group">
           {
             clientsList?.map(client =>{
               return (
