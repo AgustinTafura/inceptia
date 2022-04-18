@@ -1,26 +1,28 @@
 import React, { useContext } from 'react'
-import { BotsContext } from '../../contexts/BotsContext'
+import { ClientsContext } from '../../contexts/ClientsContext'
 import './index.scss'
 
 
-const SideBar = ({setBotActive}) => {
+const SideBar = () => {
 
-  const {clientsList} = useContext(BotsContext)
+  const {clientSelected, setClientSelected, clientsList} = useContext(ClientsContext)
     
-  
   return (
     <nav id="sidebarMenu" className="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
       <div className="position-sticky pt-3 text-center">
         <h5>CLIENTE/BOT</h5>
-        <div className="btn-group-vertical" role="group" aria-label="Basic radio toggle button group" onChange={(e)=>
-          setBotActive(e.target.id)}>
+        <div className="btn-group-vertical" role="group" onChange={(e)=>console.log(e.target)}>
           {
             clientsList?.map(client =>{
               return (
-                <>
-                  <input type="radio" className="btn-check" name="btnradio" id="btnradio1" autoComplete="off" />
-                  <label className="btn btn-outline-primary" htmlFor="btnradio1">Radio 1</label>
-                </>
+                <div key={client.id}>
+                  <input type="radio" className="btn-check" name="btnradio"  autoComplete="off" />
+                  <label 
+                    id={client.id} className={`btn btn-outline-primary ${Number(clientSelected) === Number(client.id) && 'active'}`} htmlFor="btnradio" onClick={(e)=>setClientSelected(e.target.id)}
+                  >
+                    {client.name}
+                  </label>
+                </div>
               )
             })
           }
